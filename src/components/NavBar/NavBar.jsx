@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./NavBar.css";
-import defaultLogo from "../../../public/images/logo2.png";
-import scrolledLogo from "../../../public/images/logo2.png";
+import defaultLogo from "../../../public/images/logo21.png";
+import scrolledLogo from "../../../public/images/logo21.png";
 import { NavLink } from "react-router-dom";
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -37,7 +37,7 @@ const NavBar = () => {
               <div className="relative z-20">
                 <a href="/">
                   <img
-                    className="w-[40%] h-[40%]"
+                    className="w-64 h-40"
                     id="logo"
                     src={selectedLogo}
                     alt="Your Company"

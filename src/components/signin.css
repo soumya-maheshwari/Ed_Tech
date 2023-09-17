@@ -1,14 +1,10 @@
 
   .page {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 88vh;
     color: var(--font-color)
-  }
-  .page {
-    position: relative;
-    min-height: 100vh;
   }
   
   .background-wrapper {
@@ -20,7 +16,7 @@
   }
   
   .background-image {
-    background-image: url('https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YW5pbWF0ZWQlMjB3aGl0ZSUyMG1vdW50YWluc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60'); /* Specify your background image URL */
+    background-image: url('https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YW5pbWF0ZWQlMjB3aGl0ZSUyMG1vdW50YWluc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60'); 
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -31,7 +27,8 @@
   
   .box {
     display: flex;
-    max-width: 1000px;
+    /* max-width: 1000px; */
+    max-height: 600px;
     box-shadow: 2px 2px 15px -7px #3B3B3B;
     overflow: hidden;
     border-radius: 15px;

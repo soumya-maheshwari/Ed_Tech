@@ -76,24 +76,25 @@ const Instructors = () => {
               instructorsData.map((instructors, index) => (
                 <>
                 <div className='m-3'>
-                  <div className='hover:bg-gradient-to-b from-gray-500 to-gray-800 h-64 w-full relative hover:transition-all duration-1000 ease-out overflow-hidden'>
+                <div className='hover:bg-gradient-to-b from-gray-500 to-gray-800 h-64 w-full relative hover:transition-all duration-1000 ease-out overflow-hidden'>
                     <img className="object-cover h-full w-full rounded-md absolute mix-blend-overlay" src={instructors.img} alt="instructor" />
-                    <div className='h-full flex justify-center items-end'>
-                    <a href="#" className="hover:text-blue-500 ">
-                      <i className="m-2 text-xl hover:text-blue-500 fab fa-facebook"></i>
-                    </a>
-                    <a href="#" className="hover:text-blue-500">
-                      <i className="m-2 text-xl fab fa-linkedin"></i>
-                    </a>
-                    <a href="#" className="hover:text-blue-500">
-                      <i className="m-2 text-xl fab fa-twitter"></i>
-                    </a>
-                    <a href="#" className="hover:text-red-500">
-                      <i className="m-2 text-xl fab fa-youtube"></i>
-                    </a>
-                    <a href="#" className="hover:text-pink-500">
-                      <i className="m-2 text-xl fab fa-instagram"></i>
-                    </a>
+                   
+                    <div className='h-full flex justify-center items-end z-10'>
+                      <a href="#" className="hover:text-blue-500 z-10">
+                        <i className="m-2 text-xl hover:text-blue-500 fab fa-facebook z-10"></i>
+                      </a>
+                      <a href="#" className="hover:text-blue-500">
+                        <i className="m-2 text-xl fab fa-linkedin"></i>
+                      </a>
+                      <a href="#" className="hover:text-blue-500">
+                        <i className="m-2 text-xl fab fa-twitter"></i>
+                      </a>
+                      <a href="#" className="hover:text-red-500">
+                        <i className="m-2 text-xl fab fa-youtube"></i>
+                      </a>
+                      <a href="#" className="hover:text-pink-500">
+                        <i className="m-2 text-xl fab fa-instagram"></i>
+                      </a>
                     </div>
                   </div>
                   <div className='text-center p-2'>

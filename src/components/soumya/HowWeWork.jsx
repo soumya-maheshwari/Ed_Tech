@@ -1,11 +1,5 @@
 import { useState } from "react";
-import {
-  BsFileEarmarkText,
-  BsPencil,
-  BsBox,
-  BsCheck,
-  BsFillEnvelopePaperFill,
-} from "react-icons/bs";
+import { BsFillEnvelopePaperFill } from "react-icons/bs";
 import { FaChalkboardTeacher } from "react-icons/fa";
 import { GiProgression } from "react-icons/gi";
 import { BiUserPin } from "react-icons/bi";
@@ -45,9 +39,11 @@ const HowWeWork = () => {
   };
 
   return (
-    <div className=" py-16 work-container">
-      <h2 className=" work-head ">How We Work</h2>
-      <div className="max-w-screen-lg mx-auto work-cont">
+    <div className=" py-1 ">
+      <div className="mx-auto w-[85%]">
+        <h1 className="text-4xl text-center m-2 p-2 mt-8 font-extrabold text-black">
+          How we work
+        </h1>
         <div className="relative h-2 bg-blue-300 mt-10 md:mt-0 mb-12 rounded-full progress">
           <div
             className="absolute left-0 top-0 h-2 bg-blue-700 rounded-full"
@@ -70,12 +66,12 @@ const HowWeWork = () => {
               onMouseLeave={() => handleCardHover(currentStep)}
             >
               <step.icon
-                className={`w-14 h-14  ${
+                className={`w-14 h-16 pt-4  ${
                   index <= currentStep ? "text-white-400" : "text-white-500"
                 }`}
                 id="icon-work"
               />
-              <h3 className="text-md md:text-lg font-bold text-center mb-6 step-class">
+              <h3 className="text-2xl font-bold text-center mb-6 step-class">
                 {step.name}
               </h3>
               <p className="text-sm md:text-sm text-center mb-7 step-class2">

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Carouselitem = ({name, desc, img}) => {
   return (
-        <div className='border mx-3 p-2 rounded-md m-8 shadow-md hover:shadow-2xl transition-all duration-300 ease-out'>
+        <div className='border h-[25rem] xl:h-[22rem] mx-3 p-2 rounded-md m-8 shadow-md hover:shadow-2xl transition-all duration-300 ease-out'>
             <div className='flex p-3'>
                 <img src={img} className="object-cover h-20 w-20 rounded-full" />
                 <div className='p-2'>

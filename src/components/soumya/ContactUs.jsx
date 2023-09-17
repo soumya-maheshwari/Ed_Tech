@@ -45,7 +45,7 @@ const ContactUs = () => {
 
                 <form>
                   <div className="mb-4">
-                    <label htmlFor="name" className="block text-sm font-medium">
+                    <label htmlFor="name" className="block text-sm font-medium p-2">
                       Name
                     </label>
                     <input
@@ -58,7 +58,7 @@ const ContactUs = () => {
                   <div className="mb-4">
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium"
+                      className="block text-sm font-medium p-2"
                     >
                       Email address
                     </label>
@@ -72,7 +72,7 @@ const ContactUs = () => {
                   <div className="mb-4">
                     <label
                       htmlFor="phone"
-                      className="block text-sm font-medium"
+                      className="block text-sm font-medium p-2"
                     >
                       Phone Number
                     </label>
@@ -86,7 +86,7 @@ const ContactUs = () => {
                   <div className="mb-4">
                     <label
                       htmlFor="message"
-                      className="block text-sm font-medium"
+                      className="block text-sm font-medium p-2"
                     >
                       Message
                     </label>

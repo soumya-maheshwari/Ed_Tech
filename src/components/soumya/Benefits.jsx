@@ -14,8 +14,8 @@ const Benefits = () => {
         </div>
 
         <div className="right-row">
-          <p className="heading-benefits">Learn Anything</p>
-          <p className="ben-desc">Benefits About Our Learning Expertise</p>
+          <p className="heading-benefits text-black">Learn Anything</p>
+          <p className="ben-desc text-black">Benefits About Our Learning Expertise</p>
           <div className="items">
             <div className="item1">
               <img src={img2} alt="" className="icon-class" />

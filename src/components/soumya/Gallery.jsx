@@ -9,7 +9,7 @@ const Gallery = () => {
     <>
       <div className="gallery-section pt-2">
         <h1 className="gallery-head text-black">Infrastructure Gallery</h1>
-        <p className="gallery-para ">Insights of our classrooms</p>
+        <p className="gallery-para text-black">Insights of our classrooms</p>
 
         <div class="row-campus">
           <div class="campus-col">

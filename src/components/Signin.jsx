@@ -1,5 +1,5 @@
 import React from 'react'
-import signin_image from "./signup_image.svg"
+import signin_image from "./Signin-img.svg"
 import Footer from './Footer'
 import NavBar from "../components/NavBar/NavBar";
 import { NavLink } from 'react-router-dom';
@@ -16,7 +16,7 @@ const Signin = () => {
               <div className="background-wrapper">
                 <div className="background-image"></div>
               </div>
-              <div className="box border border-gray-300 shadow-md lg:w-4/5 my-12 bg-white">
+              <div className="box border border-gray-300 shadow-md lg:w-4/5 my-20 bg-white">
                 <div className='left-box '>
                   <h1 className='heading text-4xl font-extrabold text-black'>Sign In</h1>
                   <form  className="input-form">

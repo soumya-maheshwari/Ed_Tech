@@ -5,7 +5,7 @@ const Mission = () => {
   return (
     <div>
       <div className='hero2'>
-       <h1  data-aos="fade-up" data-aos-duration="1000" className='z-10 text-4xl font-extrabold font-sans my-5 text-center'>About Us</h1>
+       <h1  data-aos="fade-up" data-aos-duration="1000" className='z-10 text-4xl font-extrabold font-sans my-5 text-center'><div className="pt-20 text-4xl font-extrabold font-sans my-5 text-center">About Us</div></h1>
       </div>
       <div className="flex flex-col md:flex-row">
         <div className="w-full md:w-1/2">
@@ -21,7 +21,7 @@ const Mission = () => {
               Our Mission
             </h2>
             <p data-aos="fade-up" data-aos-duration="1000" className='font-serif mr-24 font-semibold'> 
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                Horizon Edge Academy is on a mission to empower individuals with the knowledge and skills they need to thrive in rapidly changing world. We believe that education should be accessible, flexible, and designed to meet the unique needs of each learner.
             </p>
           </div>
        </div>
@@ -33,7 +33,7 @@ const Mission = () => {
         Our Vision
       </h2>
       <p data-aos="fade-up" data-aos-duration="1000" className='font-serif ml-24 font-semibold'> 
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+        Our vision is to create a future where education knows no boundaries. We aspire to be the leading platform that transforms lives through innovative, personalized, and practical learning experiences.
       </p>
     </div>
   </div>

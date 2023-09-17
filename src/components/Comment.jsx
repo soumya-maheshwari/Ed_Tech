@@ -2,6 +2,7 @@ import React from 'react'
 import review from './review.svg';
 
 const Comment = () => {
+  
   return (
     <div className="flex justify-center items-center my-12">
         <div className='w-full sm:w-[86%] grid grid-cols-1 lg:grid-cols-2 gap-4 border-2 rounded-lg overflow-hidden shadow-md '>
@@ -14,6 +15,13 @@ const Comment = () => {
                     <div className='text-center'>Remember to give a positive feedback</div>
                     <input type="text" placeholder="Enter name" className="input input-bordered w-full mt-6 bg-white" />
                     <input type="email" placeholder="Enter email" className="input input-bordered w-full mt-6 bg-white" />
+                    <select className="select select-bordered w-full bg-white mt-6">
+                        <option disabled selected>Which course?</option>
+                        <option>Mathematics</option>
+                        <option>Health and Fitness</option>
+                        <option>Computer Science</option>
+                    </select>
+                    
                     <textarea className="textarea textarea-bordered w-full h-32 mt-4 bg-white" placeholder="Enter your response"></textarea>
                     <div className='container text-center my-6'>
                         <div className='btn bg-primary hover:bg-white text-white border-primary hover:text-primary hover:border-primary text-center shadow-gray-300 shadow-md hover:shadow-2xl'>Leave a comment</div>

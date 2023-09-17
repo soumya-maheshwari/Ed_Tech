@@ -1,5 +1,5 @@
 import React from 'react'
-import signin_image from "./signup_image.svg"
+import signin_image from "./signup-img.svg"
 import Footer from './Footer'
 import NavBar from "../components/NavBar/NavBar";
 import { NavLink } from 'react-router-dom';
@@ -13,12 +13,12 @@ const Signin = () => {
             <div className='hero2'>
               <h1 data-aos="fade-up" data-aos-duration="1000" className='text-4xl text-center m-2 p-2 mt-8 font-bold text-white z-10'>Sign Up</h1>
            </div>
-            <div className='page '>
+            <div className='page'>
             <div className="background-wrapper">
                 {/* Background image with blur */}
                 <div className="background-image"></div>
               </div>
-              <div className="box border border-gray-300 shadow-md my-12 bg-white">
+              <div className="box border border-gray-300  lg:w-4/5  shadow-md my-20 bg-white">
                 <div className='left-box '>
                   <h1 className='heading text-4xl text-black font-extrabold'>Sign Up</h1>
                   <form  className="input-form">

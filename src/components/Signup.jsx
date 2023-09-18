@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import signin_image from "./signup-img.svg"
 import Footer from './Footer'
 import NavBar from "../components/NavBar/NavBar";
@@ -7,6 +7,9 @@ import "./signin.css"
 
 
 const Signin = () => {
+    useEffect(()=>{
+      window.scroll(0,0)
+    },[])
     return (
         <>
               <NavBar/>
@@ -14,11 +17,8 @@ const Signin = () => {
               <h1 data-aos="fade-up" data-aos-duration="1000" className='text-4xl text-center m-2 p-2 mt-8 font-bold text-white z-10'>Sign Up</h1>
            </div>
             <div className='page'>
-            <div className="background-wrapper">
-                {/* Background image with blur */}
-                <div className="background-image"></div>
-              </div>
-              <div className="box border border-gray-300  lg:w-4/5  shadow-md my-20 bg-white">
+            
+              <div className="box border border-gray-300  lg:w-4/5  shadow-md my-20 bg-white max-h-[650px]">
                 <div className='left-box '>
                   <h1 className='heading text-4xl text-black font-extrabold'>Sign Up</h1>
                   <form  className="input-form">
@@ -33,7 +33,7 @@ const Signin = () => {
                             </div>
                         </div>
                         <br/>
-                        <NavLink className="hover:text-primary hover:underline" to="/signin"> Alreaady Registered? Sign In </NavLink>
+                        <NavLink to="/signin"> Alreaady Registered? <span className='text-primary hover:underline'>Sign In</span> </NavLink>
                     </div>
                   </form>
                 </div>

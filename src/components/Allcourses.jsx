@@ -1,5 +1,4 @@
-import React, {useState} from 'react'
-import chemistry from './chemistry.svg'
+import React, {useState, useEffect} from 'react'
 import maths from './maths.svg'
 import coding from './coding.svg'
 import health from './health.svg'
@@ -14,6 +13,9 @@ const Allcourses = () => {
   const handleQuery = (value) => {
     setQuery(value);
   }
+  useEffect(()=>{
+    window.scroll(0,0)
+},[])
   const courses = [
     {
       img: health,
@@ -65,7 +67,7 @@ const Allcourses = () => {
         <NavBar/>
       </div>
       <div className='hero2'>
-        <h1 className='text-4xl text-center m-2 pt-20 mt-8 font-bold text-white z-10'>Our Courses</h1>
+        <h1 data-aos="fade-up" data-aos-duration="1000" className='text-4xl text-center m-2 pt-20 mt-8 font-bold text-white z-10'>Our Courses</h1>
       </div>
       <div className='flex justify-center items-center'>
         <div className=' w-[86%]'>
@@ -80,7 +82,7 @@ const Allcourses = () => {
           </div>
           <div className='text-center my-8'>
               <div className='btn bg-primary hover:bg-white text-white border-primary hover:text-primary hover:border-primary text-center shadow-gray-300 shadow-md hover:shadow-2xl'>
-                  <NavLink to='/'>Home</NavLink>
+                  <NavLink to='/'>Back to Home</NavLink>
               </div>
           </div>
         </div>

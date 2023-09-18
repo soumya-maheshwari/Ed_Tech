@@ -5,12 +5,12 @@ import {Routes, Route} from 'react-router-dom'
 import ContactUs from './components/soumya/ContactUs'
 import Signin from './components/Signin'
 import Signup from './components/Signup'
-import Signup2 from './components/Signup2'
 import "./App.css"
 import "react-multi-carousel/lib/styles.css";
 import "./components/style.css"
 import About from './components/About'
-import Signin2 from './components/Signin2'
+// import Signin2 from './components/Signin2'
+// import Signup2 from './components/Signup2'
 
 const App = () => {
   return (
@@ -23,8 +23,8 @@ const App = () => {
         }/>
         <Route path='/allcourses' element={<Allcourses/>}/>
         <Route path='/contact' element={<ContactUs/>}/>
-        <Route path="/signin" element={<Signin2/>}/>
-        <Route path="/signup" element={<Signup2/>}/>
+        <Route path="/signin" element={<Signin/>}/>
+        <Route path="/signup" element={<Signup/>}/>
         <Route path='/about' element={
           <>
             <About/>

@@ -4,18 +4,19 @@ import "./footer.css"
 
 const Footer = () => {
   return (
+    <>
     <footer>
       <div className="content">
         <div className="top">
           <div className="logo-details">
             <i className=""></i>
-            <span className="logo_name">Horizon Acedmy</span>
+            <span className="logo_name"><img src={defaultLogo} alt="logo" className='w-[17rem] h-[8rem] ml-[-33px]'/> </span>
           </div>
   
         </div>
         <div className="link-boxes">
           <ul className="box1">
-            <li className="link_name">Nevigation link</li>
+            <li className="link_name">Navigation link</li>
             <li><a href="#">About us</a></li>
             <li><a href="#">Contact us</a></li>
             <li><a href="#">Alumini</a></li>
@@ -59,6 +60,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </>
   );
 };
 

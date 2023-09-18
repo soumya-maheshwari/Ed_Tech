@@ -1,6 +1,5 @@
 
   .page {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,7 +27,6 @@
   .box {
     display: flex;
     /* max-width: 1000px; */
-    max-height: 600px;
     box-shadow: 2px 2px 15px -7px #3B3B3B;
     overflow: hidden;
     border-radius: 15px;
@@ -43,6 +41,27 @@
     width: 80%;
     overflow: hidden;
     object-fit: cover;
+  }
+  .line {
+    position: relative;
+  }
+  .line::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 43%;
+    height: 1px;
+    background: gray;
+  }
+  .line::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 43%;
+    height: 1px;
+    background: rgb(98, 98, 98);
   }
   
   .heading {

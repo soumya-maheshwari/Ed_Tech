@@ -37,7 +37,7 @@ const NavBar = () => {
               <div className="relative z-20">
                 <a href="/">
                   <img
-                    className="w-64 h-40"
+                    className="w-[17rem] h-[8rem] ml-[-33px]"
                     id="logo"
                     src={selectedLogo}
                     alt="Your Company"
@@ -85,7 +85,7 @@ const NavBar = () => {
                     <ul
                       className={`${
                         scrolled ? "scrolled-text" : "text-[#000]"
-                      } px-6 pt-32  text-[17px] space-y-8 md:px-12 lg:space-y-0 lg:flex lg:space-x-12 lg:pt-0`}
+                      } pl-6 pt-32  text-[17px] space-y-8 md:pl-12 lg:space-y-0 lg:flex lg:space-x-12 lg:pt-0`}
                     >
                       <li>
                         <a

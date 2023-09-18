@@ -7,7 +7,7 @@ const Mission = () => {
       <div className='hero2'>
        <h1  data-aos="fade-up" data-aos-duration="1000" className='z-10 text-4xl font-extrabold font-sans my-5 text-center'><div className="pt-20 text-4xl font-extrabold font-sans my-5 text-center">About Us</div></h1>
       </div>
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col md:flex-row text-black">
         <div className="w-full md:w-1/2">
           <img data-aos="fade-up" data-aos-duration="1000"
             src={mission}
@@ -16,7 +16,7 @@ const Mission = () => {
           />
         </div>
         <div className="flex justify-center items-center w-full md:w-1/2 p-4">
-          <div className="text-center">
+          <div className="text-center ">
             <h2 data-aos="fade-up" data-aos-duration="1000" className='font-serif my-5 text-2xl font-bold'>
               Our Mission
             </h2>
@@ -26,7 +26,7 @@ const Mission = () => {
           </div>
        </div>
       </div>
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col md:flex-row text-black">
   <div className="flex justify-center items-center w-full md:w-1/2 p-4">
     <div className="text-center">
       <h2 data-aos="fade-up" data-aos-duration="1000" className='font-serif my-5 text-2xl font-bold'>

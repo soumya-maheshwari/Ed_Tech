@@ -7,6 +7,7 @@ import health from './health.svg'
 import {NavLink} from 'react-router-dom'
 
 const Courses = () => {
+  
   const courses = [
     {
         img: health,

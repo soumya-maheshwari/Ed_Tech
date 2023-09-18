@@ -20,7 +20,7 @@ const Mission = () => {
             <h2 data-aos="fade-up" data-aos-duration="1000" className='font-serif my-5 text-2xl font-bold'>
               Our Mission
             </h2>
-            <p data-aos="fade-up" data-aos-duration="1000" className='font-serif mr-24 font-semibold'> 
+            <p data-aos="fade-up" data-aos-duration="1000" className='font-serif mx-4 font-semibold'> 
                 Horizon Edge Academy is on a mission to empower individuals with the knowledge and skills they need to thrive in rapidly changing world. We believe that education should be accessible, flexible, and designed to meet the unique needs of each learner.
             </p>
           </div>
@@ -32,7 +32,7 @@ const Mission = () => {
       <h2 data-aos="fade-up" data-aos-duration="1000" className='font-serif my-5 text-2xl font-bold'>
         Our Vision
       </h2>
-      <p data-aos="fade-up" data-aos-duration="1000" className='font-serif ml-24 font-semibold'> 
+      <p data-aos="fade-up" data-aos-duration="1000" className='font-serif mx-4 font-semibold'> 
         Our vision is to create a future where education knows no boundaries. We aspire to be the leading platform that transforms lives through innovative, personalized, and practical learning experiences.
       </p>
     </div>

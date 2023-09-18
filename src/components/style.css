@@ -1,10 +1,13 @@
 
 .react-multiple-carousel__arrow--left {
     background: rgba(0,0,0,0.8) !important;
+    z-index: inherit;
 }
   
 .react-multiple-carousel__arrow--right {
     background: rgba(0,0,0,0.8) !important;
+    z-index: inherit;
+
 }
 
 .background-wrapper {

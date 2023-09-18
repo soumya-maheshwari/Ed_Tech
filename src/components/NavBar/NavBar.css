@@ -2,13 +2,13 @@
     background-color: #0D6EFD; /* Change to the desired background color */
     transition: background-color 0.3s ease; /* Add a smooth transition */
     color: #000;
-    z-index: 2
+    z-index: 1000;
 }
 
 .scrolled-text {
     transition: background-color 0.3s ease; /* Add a smooth transition */
     color: #000;
-    z-index: 2
+    z-index: 1000;
 }
 li a{
     font-family: ' Gill sans , Georgia';

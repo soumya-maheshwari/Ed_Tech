@@ -19,9 +19,6 @@ function useCounterAnimation(initialCount, targetCount, intervalTime) {
 
     return count;
 }
-
-
-
     function Count() {
         const count = useCounterAnimation(0, 650, 2);
         const count1 = useCounterAnimation(0, 200, 10);
@@ -38,7 +35,7 @@ function useCounterAnimation(initialCount, targetCount, intervalTime) {
                             <div className="flex flex-wrap -mx-4 mt-auto mb-auto  justify-center sm:pr-10">
                                 <div className="w-full sm:p-4 px-4 mb-6">
                                     <h1 className="title-font font-bold text-2xl mb-2 text-white">India's most Loved Educational Platform</h1>
-                                    <div className="leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</div>
+                                    <div className="leading-relaxed">"Step into our world of accomplishments and witness the magic unfold as we celebrate every milestone. From the number of students selected to the live sessions and questions conquered, our journey is a testament to boundless dedication and limitless possibilities. Join us as we count up to greatness!"</div>
                                 </div>
                                 <div className="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
                                     <img src={image1} alt="Happy Students" className="w-16 h-16 mb-4 mx-auto" />

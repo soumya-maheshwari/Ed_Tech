@@ -25,42 +25,42 @@ const Instructors = () => {
     {
       img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
       name : "Ritika Sharma",
-      profession : "Lorem ipsum dolor sit amet."
+      profession : "I'm Ritika Sharma, your wellness guide. Let's embark on a journey to health, fitness, and mindfulness for a happier, healthier you!"
     },
     {
       img: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cGVvcGxlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
       name : "Arkshan Gupta",
-      profession : "Lorem ipsum dolor sit amet."
+      profession : "Your coding mentor. Dive into the world of programming and software engineering with our Full-Stack Coding course. "
     }, 
     {
       img: "https://images.unsplash.com/photo-1489980557514-251d61e3eeb6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60",
-      name : "Vikram Malik",
-      profession : "Lorem ipsum dolor sit amet."
+      name : "Amit Chanija",
+      profession : "Your math guide. Uncover the wonders of advanced mathematics with our expert-led course. Master complex concepts and enhance your math skills."
     },
     {
       img: "https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60",
-      name : "Amit Chanija",
-      profession : "Lorem ipsum dolor sit amet."
+      name : "Ethan Turner",
+      profession : "Your scientific journey guide. Explore the captivating realms of science in our comprehensive course. Unveil the wonders of the universe."
     },
     {
-        img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
-        name : "Mikasa Ackerman",
-        profession : "Lorem ipsum dolor sit amet."
+      img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+      name : "Ritika Sharma",
+      profession : "I'm Ritika Sharma, your wellness guide. Let's embark on a journey to health, fitness, and mindfulness for a happier, healthier you!"
     },
     {
       img: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cGVvcGxlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
-      name : "Eren",
-      profession : "Lorem ipsum dolor sit amet."
+      name : "Arkshan Gupta",
+      profession : "Your coding mentor. Dive into the world of programming and software engineering with our Full-Stack Coding course. "
     }, 
     {
-      img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
-      name : "Levi",
-      profession : "Lorem ipsum dolor sit amet."
+      img: "https://images.unsplash.com/photo-1489980557514-251d61e3eeb6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60",
+      name : "Amit Chanija",
+      profession : "Your math guide. Uncover the wonders of advanced mathematics with our expert-led course. Master complex concepts and enhance your math skills."
     },
     {
-      img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
-      name : "Erwin Smith",
-      profession : "Lorem ipsum dolor sit amet."
+      img: "https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60",
+      name : "Ethan Turner",
+      profession : "Your scientific journey guide. Explore the captivating realms of science in our comprehensive course. Unveil the wonders of the universe and embark on a path to scientific excellence!"
     },
   ];
   return (

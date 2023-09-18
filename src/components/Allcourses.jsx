@@ -15,7 +15,7 @@ const Allcourses = () => {
   }
   useEffect(()=>{
     window.scroll(0,0)
-},[])
+  },[])
   const courses = [
     {
       img: health,
@@ -34,7 +34,7 @@ const Allcourses = () => {
     {
       img: maths,
       name : "Mathematics",
-      desc : "Explore the fascinating world of advanced mathematics with our expert-led course. From calculus to abstract algebra, master complex concepts and boost your math skills for academic or career success.",
+      desc : "Explore the fascinating world of advanced mathematics with our expert-led course. From calculus to abstract algebra, master complex concepts and boost your math skills.",
       instructor : "Amit Chanija",
       instructorImg : "https://images.unsplash.com/photo-1489980557514-251d61e3eeb6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60"
     },
@@ -55,9 +55,16 @@ const Allcourses = () => {
     {
       img: maths,
       name : "Mathematics",
-      desc : "Explore the fascinating world of advanced mathematics with our expert-led course. From calculus to abstract algebra, master complex concepts and boost your math skills for academic or career success.",
+      desc : "Explore the fascinating world of advanced mathematics with our expert-led course. From calculus to abstract algebra, master complex concepts and boost your math skills.",
       instructor : "Amit Chanija",
       instructorImg : "https://images.unsplash.com/photo-1489980557514-251d61e3eeb6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60"
+    },
+    {
+      img: maths,
+      name : "Arts and Humanities",
+      desc : "Shruti is a music maestro who introduces students to the world of melody, rhythm, and harmony. Her classes inspire a love for music",
+      instructor : "Shruti Sharma",
+      instructorImg : "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d29tZW58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"
     },
   ];
 

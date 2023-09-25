@@ -1,9 +1,35 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Carousel from 'react-multi-carousel';
 import Carouselitem from './Carouselitem';
 import { NavLink } from 'react-router-dom';
 
 const Testimonials = () => {
+  const [userData, setuserData] = useState([]);
+  useEffect(() => {
+    const feedbackData = async () => {
+        console.log("hello");
+        try {
+            const res = await fetch("https://hea-zg7o.onrender.com/feedback/getFeedbacks", {
+                method: "GET",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json"
+                },
+            });
+            console.log("feedback data called");
+            const data = await res.json();
+            console.log(data);
+            if(res.status !== 200) {
+                const error = new Error(res.error);
+                throw error;
+            } 
+            setuserData([...data.feedbacks]);
+        } catch(err) {
+            console.log(err);
+        }
+    }
+    feedbackData();
+  }, []);
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -78,12 +104,11 @@ const Testimonials = () => {
             responsive={responsive} 
             showDots={true}
         >
-            {testimonialsData.map((testimonial, index) => (
+            {userData.map((data, index) => (
                 <Carouselitem
                 key={index}
-                img={testimonial.img}
-                name={testimonial.name}
-                desc={testimonial.desc}
+                name={data.name}
+                desc={data.comment}
                 />
             ))}
         </Carousel>

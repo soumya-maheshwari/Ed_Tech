@@ -80,6 +80,9 @@ const Signin = () => {
             draggable: true,
           });
 
+          setEmail("");
+          setPassword("");
+
           setTimeout(() => {
             navigate("/");
           }, 3000);

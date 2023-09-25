@@ -1,9 +1,9 @@
 import React from "react";
-import image from "./learning.svg";
-import "./style.css";
-import img1 from "./1.png";
-import img2 from "./2.png";
-import img3 from "./4.png";
+import image from "../assets/learning.svg";
+import "./styles.css";
+import img1 from "../assets/1.png";
+import img2 from "../assets/2.png";
+import img3 from "../assets/4.png";
 
 const Benefits = () => {
   return (
@@ -15,7 +15,9 @@ const Benefits = () => {
 
         <div className="right-row">
           <p className="heading-benefits text-black">Learn Anything</p>
-          <p className="ben-desc text-black">Benefits About Our Learning Expertise</p>
+          <p className="ben-desc text-black">
+            Benefits About Our Learning Expertise
+          </p>
           <div className="items">
             <div className="item1">
               <img src={img2} alt="" className="icon-class" />

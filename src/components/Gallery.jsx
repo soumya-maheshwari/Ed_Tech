@@ -1,8 +1,8 @@
 import React from "react";
 import "./style.css";
-import london from "./class1.jpg";
-import newyork from "./class2.jpg";
-import wash from "./class3.jpg";
+import london from "../assets/class1.jpg";
+import newyork from "../assets/class2.jpg";
+import wash from "../assets/class3.jpg";
 
 const Gallery = () => {
   return (

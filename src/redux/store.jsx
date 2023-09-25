@@ -4,6 +4,7 @@ import storage from "redux-persist/lib/storage";
 import thunk from "redux-thunk";
 
 import authReducer from "./authSlice";
+import contactReducer from "./contactSlice";
 
 const persistConfig = {
   key: "root",
@@ -11,10 +12,12 @@ const persistConfig = {
 };
 
 const persistedAuthReducer = persistReducer(persistConfig, authReducer);
+const persistedContactReducer = persistReducer(persistConfig, contactReducer);
 
 const store = configureStore({
   reducer: {
     auth: persistedAuthReducer,
+    contact: persistedContactReducer,
   },
 
   middleware: [thunk],

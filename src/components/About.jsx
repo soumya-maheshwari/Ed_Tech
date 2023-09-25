@@ -1,23 +1,23 @@
-import React, {useEffect} from 'react'
-import NavBar from './NavBar/NavBar'
-import Mission from './Mission And Vission/Mission'
-import HowWeWork from './soumya/HowWeWork'
-import Instructors from './Instructors'
-import Footer from './Footer'
+import React, { useEffect } from "react";
+import NavBar from "./NavBar/NavBar";
+import Mission from "./Mission And Vission/Mission";
+import HowWeWork from "./HowWeWork";
+import Instructors from "./Instructors";
+import Footer from "./Footer";
 
 const About = () => {
-    useEffect(()=>{
-        window.scroll(0,0)
-    },[])
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
   return (
     <>
-        <NavBar/>
-        <Mission/>
-        <HowWeWork/>
-        <Instructors/>
-        <Footer/>
+      <NavBar />
+      <Mission />
+      <HowWeWork />
+      <Instructors />
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default About
+export default About;

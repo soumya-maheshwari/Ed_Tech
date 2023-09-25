@@ -83,6 +83,10 @@ const SignUp = () => {
             draggable: true,
           });
 
+          setName("");
+          setEmail("");
+          setPassword("");
+          setPhone("");
           setTimeout(() => {
             navigate("/");
           }, 3000);

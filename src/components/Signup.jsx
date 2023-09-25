@@ -2,14 +2,15 @@ import React, { useEffect, useState } from "react";
 import signin_image from "./signup-img.svg";
 import Footer from "./Footer";
 import NavBar from "../components/NavBar/NavBar";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./signin.css";
 import { useDispatch } from "react-redux";
-import { registerUserThunk } from "../redux/redux/authSlice";
+import { registerUserThunk } from "../redux/authSlice";
 import { ToastContainer, toast } from "react-toastify";
 
 const SignUp = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -81,6 +82,10 @@ const SignUp = () => {
             pauseOnHover: true,
             draggable: true,
           });
+
+          setTimeout(() => {
+            navigate("/");
+          }, 3000);
         }
 
         return res;

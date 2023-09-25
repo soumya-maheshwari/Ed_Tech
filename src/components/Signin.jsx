@@ -2,18 +2,18 @@ import React, { useEffect, useState } from "react";
 import signin_image from "./Signin-img.svg";
 import Footer from "./Footer";
 import NavBar from "../components/NavBar/NavBar";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./signin.css";
 import { useDispatch } from "react-redux";
-import { loginUserThunk } from "../redux/redux/authSlice";
+import { loginUserThunk } from "../redux/authSlice";
 import { ToastContainer, toast } from "react-toastify";
 
 const Signin = () => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const [loading, setLoading] = useState("");
+  const navigate = useNavigate();
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
@@ -73,13 +73,16 @@ const Signin = () => {
         if (res.payload.data.success) {
           toast.success(`${res.payload.data.msg}`, {
             position: "top-right",
-            // theme: "dark",
             autoClose: 3000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
           });
+
+          setTimeout(() => {
+            navigate("/");
+          }, 3000);
         }
         return res;
       })

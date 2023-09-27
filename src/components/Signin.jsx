@@ -86,6 +86,8 @@ const Signin = () => {
           setTimeout(() => {
             navigate("/");
           }, 3000);
+
+          localStorage.setItem("userInfo", JSON.stringify(res.payload.data));
         }
         return res;
       })

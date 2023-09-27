@@ -3,9 +3,18 @@ import "./NavBar.css";
 import defaultLogo from "../../../public/images/logo21.png";
 import scrolledLogo from "../../../public/images/logo21.png";
 import { NavLink } from "react-router-dom";
+import { AiOutlineUser } from "react-icons/ai";
+
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [selectedLogo, setSelectedLogo] = useState(defaultLogo);
+
+  const user = JSON.parse(localStorage.getItem("userInfo")) ? true : false;
+  console.log(user);
+
+  const user_name = JSON.parse(localStorage.getItem("userInfo"));
+  // console.log(user_name.user.name);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -92,7 +101,9 @@ const NavBar = () => {
                           href="/"
                           className="group relative before:absolute before:inset-x-0 before:top-6 before:h-1 before:origin-right before:scale-x-0 before:bg-[#fff] before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100"
                         >
-                          <span className="relative"><NavLink to="/">Home</NavLink></span>
+                          <span className="relative">
+                            <NavLink to="/">Home</NavLink>
+                          </span>
                         </a>
                       </li>
                       <li>
@@ -100,7 +111,9 @@ const NavBar = () => {
                           href="/"
                           className="group relative before:absolute before:inset-x-0 before:top-6 before:h-1 before:origin-right before:scale-x-0 before:bg-[#fff] before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100"
                         >
-                          <span className="relative "><NavLink to="/allcourses">Courses</NavLink></span>
+                          <span className="relative ">
+                            <NavLink to="/allcourses">Courses</NavLink>
+                          </span>
                         </a>
                       </li>
 
@@ -109,7 +122,9 @@ const NavBar = () => {
                           href="/"
                           className="group relative before:absolute before:inset-x-0 before:top-6 before:h-1 before:origin-right before:scale-x-0 before:bg-[#fff] before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100"
                         >
-                          <span className="relative "><NavLink to="/about">About Us</NavLink></span>
+                          <span className="relative ">
+                            <NavLink to="/about">About Us</NavLink>
+                          </span>
                         </a>
                       </li>
                       <li>
@@ -117,15 +132,28 @@ const NavBar = () => {
                           href="/"
                           className="group relative before:absolute before:inset-x-0 before:top-6 before:h-1 before:origin-right before:scale-x-0 before:bg-[#fff] before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100"
                         >
-                          <span className="relative "><NavLink to="/contact">Contact Us</NavLink></span>
+                          <span className="relative ">
+                            <NavLink to="/contact">Contact Us</NavLink>
+                          </span>
                         </a>
                       </li>
                       <li>
-                      <a
+                        <a
                           href="/"
-                          className="group relative before:absolute before:inset-x-0 before:top-6 before:h-1 before:origin-right before:scale-x-0 before:bg-[#fff] before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100"
+                          // className="group relative before:absolute before:inset-x-0 before:top-6 before:h-1 before:origin-right before:scale-x-0 before:bg-[#fff] before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100"
                         >
-                          <span className="relative "><NavLink to="/signin">Sign In</NavLink></span>
+                          <span className="k ">
+                            {user ? (
+                              <>
+                                <AiOutlineUser
+                                  style={{ width: "26px", height: "26px" }}
+                                />
+                                {user_name.user.name}
+                              </>
+                            ) : (
+                              <NavLink to="/signin">Sign In</NavLink>
+                            )}
+                          </span>
                         </a>
                       </li>
                     </ul>

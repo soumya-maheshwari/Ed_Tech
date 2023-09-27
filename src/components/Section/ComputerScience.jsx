@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import image9 from "./images/i9.jpg"
 import image10 from "./images/i10.avif"
 import NavBar from '../NavBar/NavBar';
 const ComputerScience = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
   return (
     <>
       <NavBar/>

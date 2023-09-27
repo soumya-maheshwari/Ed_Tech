@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import review from './review.svg';
+import {Rate} from 'antd'
 
 const Comment = () => {
   const [commentMsg, setCommentMsg] = useState({
-    name: "", email:"", course:"", comment:""
+    name: "", email:"", course:"", comment:"", rating:0
   });
   console.log(commentMsg);
   
@@ -11,6 +12,10 @@ const Comment = () => {
     const {name, value} = e.target;
     console.log(name, value);
     setCommentMsg({...commentMsg, [name]:value});
+  }
+
+  const handleRating = (newRating) => {
+    setCommentMsg({...commentMsg, rating:newRating});
   }
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,7 +34,7 @@ const Comment = () => {
         console.log("comment not sent");
       } else {
         console.log("comment sent successfully");
-        setCommentMsg({name:"", email:"", course:"", comment:""});
+        setCommentMsg({name:"", email:"", course:"", comment:"", rating:0});
       }
     } catch (error) {
       console.log(error);
@@ -58,8 +63,13 @@ const Comment = () => {
                         <option value="Social Studies">Social Studies</option>
                         <option value="Arts and Humanities">Arts and Humanities</option>
                     </select>
+
+                    <div className='px-4 py-2 my-4 border rounded-lg'>
+                      <div>What would you rate the course? </div>
+                      <Rate className='text-primary' name="rating" value={commentMsg.rating} onChange={handleRating}/>
+                    </div>
                     
-                    <textarea name="comment" value={commentMsg.comment} className="textarea textarea-bordered w-full h-32 mt-4 bg-white" placeholder="Enter your response" onChange={handleInput}></textarea>
+                    <textarea name="comment" value={commentMsg.comment} className="textarea textarea-bordered w-full h-32 mt-2 bg-white" placeholder="Enter your response" onChange={handleInput}></textarea>
                     <div className='container text-center my-6'>
                         <div className='btn bg-primary hover:bg-white text-white border-primary hover:text-primary hover:border-primary text-center shadow-gray-300 shadow-md hover:shadow-2xl' onClick={handleSubmit}>Leave a comment</div>
                     </div>

@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import image7 from "./images/i7.avif"
 import image8 from "./images/i8.jpg"
 import NavBar from '../NavBar/NavBar';
 
 const SocialStudies = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
   return (
     <>
       <NavBar/>

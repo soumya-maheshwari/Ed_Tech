@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import image11 from "./images/i11.png"
 import image12 from "./images/i12.png"
 import NavBar from '../NavBar/NavBar';
 
 const Languages = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
   return (
     <>
       <NavBar/>

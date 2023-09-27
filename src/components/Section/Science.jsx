@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import image4 from "./images/i4.webp"
 import image5 from "./images/i5.webp"
 import image6 from "./images/i6.avif"
 import NavBar from '../NavBar/NavBar';
 const Science = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
   return (
     <>
       <NavBar/>

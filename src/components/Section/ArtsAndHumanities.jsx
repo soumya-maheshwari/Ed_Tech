@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import image13 from "./images/i13.avif";
 import image14 from "./images/i14.jpg";
 import NavBar from '../NavBar/NavBar';
 
 const ArtsAndHumanities = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
   return (
     <>
       <NavBar/>

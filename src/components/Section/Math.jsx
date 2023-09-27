@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import image1 from "./images/i1.avif"
 import image2 from "./images/i2.avif"
 import image3 from "./images/i3.jpg"
 import NavBar from '../NavBar/NavBar';
 const Math = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
   return (
     <div>
       <NavBar/>

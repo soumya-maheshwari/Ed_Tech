@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import image15 from "./images/i15.avif"
 import image16 from "./images/i16.jpg"
 import NavBar from '../NavBar/NavBar';
 
 const HealthAndFitness = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
   return (
     <>
       <NavBar/>

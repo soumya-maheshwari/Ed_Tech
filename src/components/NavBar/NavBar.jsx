@@ -15,6 +15,11 @@ const NavBar = () => {
   const user_name = JSON.parse(localStorage.getItem("userInfo"));
   // console.log(user_name.user.name);
 
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate("/");
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {

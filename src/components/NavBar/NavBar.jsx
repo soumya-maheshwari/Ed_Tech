@@ -2,15 +2,16 @@ import { useState, useEffect } from "react";
 import "./NavBar.css";
 import defaultLogo from "../../../public/images/logo21.png";
 import scrolledLogo from "../../../public/images/logo21.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { AiOutlineUser } from "react-icons/ai";
-import { Button, Modal } from 'antd';
+import { Modal } from 'antd';
 import profile from '../profile-img.svg';
 
 const NavBar = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [selectedLogo, setSelectedLogo] = useState(defaultLogo);
+  const navigate = useNavigate();
 
   const user = JSON.parse(localStorage.getItem("userInfo")) ? true : false;
   console.log(user);
@@ -21,6 +22,7 @@ const NavBar = () => {
   const handleLogout = () => {
     localStorage.clear();
     navigate("/");
+    window.location.reload(true);
   };
 
   useEffect(() => {

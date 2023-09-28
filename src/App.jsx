@@ -16,6 +16,7 @@ import Arts from "./components/Section/ArtsAndHumanities";
 import Language from "./components/Section/Languages";
 import Social from "./components/Section/SocialStudies";
 import Health from "./components/Section/HealthAndFitness";
+import AllTestimonials from "./components/AllTestimonials";
 // import Signin2 from './components/Signin2'
 // import Signup2 from './components/Signup2'
 
@@ -42,7 +43,7 @@ const App = () => {
         <Route path="/language" element={<Language />} />
         <Route path="/social" element={<Social />} />
         <Route path="/health" element={<Health />} />
-
+        <Route path="/alltestimonials" element={<AllTestimonials/>} />
         <Route
           path="/about"
           element={

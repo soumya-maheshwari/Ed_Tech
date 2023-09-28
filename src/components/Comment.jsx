@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import review from './review.svg';
 import {Rate} from 'antd'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Comment = () => {
   const [commentMsg, setCommentMsg] = useState({
     name: "", email:"", course:"", comment:"", rating:0
   });
   console.log(commentMsg);
+  const user = JSON.parse(localStorage.getItem("userInfo")) ? true : false;
   
   const handleInput = (e) => {
     const {name, value} = e.target;
@@ -19,6 +22,11 @@ const Comment = () => {
   }
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if(!user) {
+      toast.error("Signin To Leave a Comment!!")
+      console.log("login first");
+      return;
+    }
     try {
       const res = await fetch("https://hea-zg7o.onrender.com/feedback/submitFeedback", {
         method: "POST",
@@ -76,6 +84,7 @@ const Comment = () => {
                 </div>
             </div>
         </form>
+        <ToastContainer/>
     </div>
   )
 }

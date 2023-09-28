@@ -4,8 +4,11 @@ import defaultLogo from "../../../public/images/logo21.png";
 import scrolledLogo from "../../../public/images/logo21.png";
 import { NavLink } from "react-router-dom";
 import { AiOutlineUser } from "react-icons/ai";
+import { Button, Modal } from 'antd';
+import profile from '../profile-img.svg';
 
 const NavBar = () => {
+  const [modalOpen, setModalOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [selectedLogo, setSelectedLogo] = useState(defaultLogo);
 
@@ -143,23 +146,49 @@ const NavBar = () => {
                         </a>
                       </li>
                       <li>
-                        <a
+                        {/* <a
                           href="/"
                           // className="group relative before:absolute before:inset-x-0 before:top-6 before:h-1 before:origin-right before:scale-x-0 before:bg-[#fff] before:transition before:duration-200 hover:before:origin-left hover:before:scale-x-100"
-                        >
-                          <span className="k ">
+                        > */}
+                          <span className="k text-white relative hover:cursor-pointer">
                             {user ? (
                               <>
-                                <AiOutlineUser
-                                  style={{ width: "26px", height: "26px" }}
-                                />
-                                {user_name.user.name}
+                                <div onClick={() => setModalOpen(true)} >
+                                  <AiOutlineUser
+                                    className="w-[26px] h-[26px] rounded-full border-solid border-2"
+                                  />
+                                </div>
+                                <div className="relative">
+                                <Modal
+                                  style={{
+                                    position: "absolute",
+                                    top: "15%",
+                                    right: "10%",
+                                  }}
+                                  
+                                  open={modalOpen}
+                                  onOk={() => setModalOpen(false)}
+                                  onCancel={() => setModalOpen(false)}
+                                  footer={null}
+                                >
+                                  <div className='flex items-center'>
+                                      <img src={profile} className="object-cover h-9 w-9 mr-2 rounded-full" />
+                                      <div className="text-md font-bold">{user_name.user.name}</div>
+                                  </div>
+                                  <div className="flex w-full justify-center align-center">
+                                  <button className="mt-4 p-2 bg-primary rounded-md" onClick={handleLogout}>
+                                    <div className="font-extrabold text-white"><i className="fa-solid fa-right-from-bracket fa-lg mr-2"></i>Signout</div>
+                                  </button>
+                                  </div>
+                                </Modal>
+                                </div>
+                                {/* {user_name.user.name} */}
                               </>
                             ) : (
                               <NavLink to="/signin">Sign In</NavLink>
                             )}
                           </span>
-                        </a>
+                        {/* </a> */}
                       </li>
                     </ul>
                   </div>

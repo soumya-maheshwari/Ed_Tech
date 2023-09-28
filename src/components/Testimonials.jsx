@@ -69,7 +69,7 @@ const Testimonials = () => {
         </Carousel>
         <div className='text-center my-6'>
             <div className='btn bg-primary hover:bg-white text-white border-primary hover:text-primary hover:border-primary text-center shadow-gray-300 shadow-md hover:shadow-2xl'>
-                <NavLink to="/contact">Load More Comments!!</NavLink>
+                <NavLink to="/alltestimonials">Load More Comments!!</NavLink>
             </div>
         </div>
       </div>

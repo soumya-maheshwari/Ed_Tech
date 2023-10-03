@@ -10,7 +10,7 @@ const Comment = () => {
   });
   console.log(commentMsg);
   const user = JSON.parse(localStorage.getItem("userInfo")) ? true : false;
-  console.log(user);
+  const userData = JSON.parse(localStorage.getItem("userInfo")).user;
   
   const handleInput = (e) => {
     const {name, value} = e.target;
@@ -28,6 +28,7 @@ const Comment = () => {
       console.log("login first");
       return;
     }
+    setCommentMsg({ ...commentMsg, name: userData.name, email: userData.email });
     try {
       const res = await fetch("https://hea-zg7o.onrender.com/feedback/submitFeedback", {
         method: "POST",
@@ -60,8 +61,43 @@ const Comment = () => {
                 <div>
                     <h1 className='text-4xl text-center p-3 font-extrabold text-black'>Reviews and Comments</h1>
                     <div className='text-center'>Remember to give a positive feedback</div>
-                    <input type="text" name="name" value={commentMsg.name} placeholder="Enter name" className="input input-bordered w-full mt-6 bg-white" onChange={handleInput}/>
-                    <input type="email" name="email" value={commentMsg.email} placeholder="Enter email" className="input input-bordered w-full mt-6 bg-white" onChange={handleInput}/>
+                    {user ? (
+                      <>
+                        <input
+                          type="text"
+                          name="name"
+                          value={userData.name}
+                          className="input input-bordered w-full mt-6 bg-white"
+                          readOnly
+                        />
+                        <input
+                          type="email"
+                          name="email"
+                          value={userData.email}
+                          className="input input-bordered w-full mt-6 bg-white"
+                          readOnly
+                        />
+                      </>
+                    ) : (
+                      <>
+                        <input
+                          type="text"
+                          name="name"
+                          value={commentMsg.name}
+                          placeholder="Enter name"
+                          className="input input-bordered w-full mt-6 bg-white"
+                          onChange={handleInput}
+                        />
+                        <input
+                          type="email"
+                          name="email"
+                          value={commentMsg.email}
+                          placeholder="Enter email"
+                          className="input input-bordered w-full mt-6 bg-white"
+                          onChange={handleInput}
+                        />
+                      </>
+                    )}
                     <select name="course" value={commentMsg.course} className="select select-bordered w-full bg-white mt-6" onChange={handleInput}>
                         <option disabled selected value="">Which course?</option>
                         <option value="Health and Fitness">Health and Fitness</option>

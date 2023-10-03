@@ -14,11 +14,7 @@ const NavBar = () => {
   const navigate = useNavigate();
 
   const user = JSON.parse(localStorage.getItem("userInfo")) ? true : false;
-  console.log(user);
-
   const user_name = JSON.parse(localStorage.getItem("userInfo"));
-  // console.log(user_name.user.name);
-
   const handleLogout = () => {
     localStorage.clear();
     navigate("/");

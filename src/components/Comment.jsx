@@ -10,6 +10,7 @@ const Comment = () => {
   });
   console.log(commentMsg);
   const user = JSON.parse(localStorage.getItem("userInfo")) ? true : false;
+  console.log(user);
   
   const handleInput = (e) => {
     const {name, value} = e.target;

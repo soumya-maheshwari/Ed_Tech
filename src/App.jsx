@@ -17,6 +17,7 @@ import Language from "./components/Section/Languages";
 import Social from "./components/Section/SocialStudies";
 import Health from "./components/Section/HealthAndFitness";
 import AllTestimonials from "./components/AllTestimonials";
+import Icon from "./components/Icon";
 // import Signin2 from './components/Signin2'
 // import Signup2 from './components/Signup2'
 
@@ -29,11 +30,22 @@ const App = () => {
           element={
             <>
               <Home />
+              <Icon/>
             </>
           }
         />
-        <Route path="/allcourses" element={<Allcourses />} />
-        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/allcourses" element={
+          <>
+            <Allcourses />
+            <Icon/>
+          </>
+        } />
+        <Route path="/contact" element={
+          <>
+            <ContactUs />
+            <Icon/>
+          </>
+        } />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/math" element={<Math />} />
@@ -49,6 +61,7 @@ const App = () => {
           element={
             <>
               <About />
+              <Icon/>
             </>
           }
         />

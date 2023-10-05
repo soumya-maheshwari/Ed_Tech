@@ -18,6 +18,7 @@ import Social from "./components/Section/SocialStudies";
 import Health from "./components/Section/HealthAndFitness";
 import AllTestimonials from "./components/AllTestimonials";
 import Icon from "./components/Icon";
+import Profile from "./components/Profile";
 // import Signin2 from './components/Signin2'
 // import Signup2 from './components/Signup2'
 
@@ -30,38 +31,46 @@ const App = () => {
           element={
             <>
               <Home />
-              <Icon/>
+              <Icon />
             </>
           }
         />
-        <Route path="/allcourses" element={
-          <>
-            <Allcourses />
-            <Icon/>
-          </>
-        } />
-        <Route path="/contact" element={
-          <>
-            <ContactUs />
-            <Icon/>
-          </>
-        } />
+        <Route
+          path="/allcourses"
+          element={
+            <>
+              <Allcourses />
+              <Icon />
+            </>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <>
+              <ContactUs />
+              <Icon />
+            </>
+          }
+        />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/math" element={<Math />} />
         <Route path="/science" element={<Science />} />
         <Route path="/computer" element={<Computer />} />
         <Route path="/arts" element={<Arts />} />
+        <Route path="/profile" element={<Profile />} />
+
         <Route path="/language" element={<Language />} />
         <Route path="/social" element={<Social />} />
         <Route path="/health" element={<Health />} />
-        <Route path="/alltestimonials" element={<AllTestimonials/>} />
+        <Route path="/alltestimonials" element={<AllTestimonials />} />
         <Route
           path="/about"
           element={
             <>
               <About />
-              <Icon/>
+              <Icon />
             </>
           }
         />

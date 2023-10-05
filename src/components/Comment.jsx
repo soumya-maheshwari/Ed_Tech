@@ -10,7 +10,7 @@ const Comment = () => {
   });
   console.log(commentMsg);
   const user = JSON.parse(localStorage.getItem("userInfo")) ? true : false;
-  const userData = JSON.parse(localStorage.getItem("userInfo")).user;
+  const userData = JSON.parse(localStorage.getItem("userInfo"))?.user;
   
   const handleInput = (e) => {
     const {name, value} = e.target;
@@ -43,6 +43,7 @@ const Comment = () => {
       if(!data) {
         console.log("comment not sent");
       } else {
+        toast.success("Comment Sent Successfully");
         console.log("comment sent successfully");
         setCommentMsg({name:"", email:"", course:"", comment:"", rating:0});
       }

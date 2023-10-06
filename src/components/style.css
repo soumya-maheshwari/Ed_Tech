@@ -1,17 +1,16 @@
 .react-multiple-carousel__arrow--left {
-    background: rgba(0,0,0,0.8) !important;
-    z-index: 10 !important;
+  background: rgba(0, 0, 0, 0.8) !important;
+  z-index: 10 !important;
 }
-  
-.react-multiple-carousel__arrow--right {
-    background: rgba(0,0,0,0.8) !important;
-    z-index: 10 !important;
 
+.react-multiple-carousel__arrow--right {
+  background: rgba(0, 0, 0, 0.8) !important;
+  z-index: 10 !important;
 }
 
 .background-wrapper {
   position: relative;
-  transition: background-image 0.3s ease; 
+  transition: background-image 0.3s ease;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
 
@@ -121,4 +120,9 @@
   color: #fff;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   margin-right: 10px;
+}
+#upload-img {
+  background: none;
+  border: none;
+  outline: none;
 }

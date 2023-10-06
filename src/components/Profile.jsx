@@ -3,10 +3,13 @@ import { FaBook } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { editProfileThunk } from "../redux/profileSlice";
 import { ToastContainer, toast } from "react-toastify";
+import "../components/styles.css";
 
 const Profile = () => {
   const userData = JSON.parse(localStorage.getItem("userInfo"));
   const dispatch = useDispatch();
+  const [uploadImg, setUploadImg] = useState(null);
+  const [selectedImgURL, setSelectedImgURL] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [nameEditing, setNameEditing] = useState(false);
   const [name, setName] = useState(userData.user.name);
@@ -63,11 +66,15 @@ const Profile = () => {
       });
     setIsEditing(false);
     setNameEditing(false);
-    // alert("Changes saved successfully");
   };
 
   const handleUploadClick = () => {
-    console.log("Uploading profile picture...");
+    // console.log("Uploading profile picture...");
+  };
+  const handleUploadImage = (e) => {
+    const selectedFile = e.target.files[0];
+    setUploadImg(selectedFile);
+    setSelectedImgURL(URL.createObjectURL(selectedFile)); // Create a URL for selected image
   };
 
   return (
@@ -84,12 +91,31 @@ const Profile = () => {
         <div className="w-full lg:w-1/2 max-w-xl mx-auto bg-blue rounded text-center mb-8 p-4">
           <div className="relative inline-block">
             <div className="profile-photo relative mb-4">
-              <img
-                src="https://img.freepik.com/premium-vector/young-smiling-man-avatar-man-with-brown-beard-mustache-hair-wearing-yellow-sweater-sweatshirt-3d-vector-people-character-illustration-cartoon-minimal-style_365941-860.jpg"
-                alt="Profile Photo"
-                className="rounded-full w-32 h-32 border-2 border-white"
+              {selectedImgURL ? (
+                <>
+                  <img
+                    src={selectedImgURL}
+                    alt="Selected Image"
+                    className="rounded-full w-32 h-32 border-2 border-white"
+                  />
+                </>
+              ) : (
+                <>
+                  <img
+                    src="https://img.freepik.com/premium-vector/young-smiling-man-avatar-man-with-brown-beard-mustache-hair-wearing-yellow-sweater-sweatshirt-3d-vector-people-character-illustration-cartoon-minimal-style_365941-860.jpg"
+                    alt="Profile Photo"
+                    className="rounded-full w-32 h-32 border-2 border-white"
+                  />
+                </>
+              )}
+              <input
+                type="file"
+                id="upload-img"
+                accept="image/png, image/jpg, image/jpeg"
+                // hidden
+                onChange={handleUploadImage}
               />
-              <button
+              {/* <button
                 onClick={handleUploadClick}
                 className="absolute bottom-0 right-0 bg-blue-500 text-white p-1 rounded-full"
               >
@@ -107,7 +133,7 @@ const Profile = () => {
                     d="M12 6v6m0 0v6m0-6h6m-6 0H6"
                   ></path>
                 </svg>
-              </button>
+              </button> */}
             </div>
           </div>
 

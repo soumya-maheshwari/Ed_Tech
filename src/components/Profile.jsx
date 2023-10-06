@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { FaBook } from "react-icons/fa";
 import { useDispatch } from "react-redux";
+import { editProfileThunk } from "../redux/profileSlice";
+import { ToastContainer, toast } from "react-toastify";
 
 const Profile = () => {
   const userData = JSON.parse(localStorage.getItem("userInfo"));
@@ -28,7 +30,37 @@ const Profile = () => {
     phone,
     address,
   };
-  const handleSaveClick = () => {
+
+  const data = {
+    name,
+    email,
+    phone,
+  };
+
+  console.log(data);
+  const handleSaveClick = (e) => {
+    e.preventDefault();
+    dispatch(editProfileThunk(data))
+      .then((res) => {
+        console.log(res);
+        if (res.payload.data.success) {
+          toast.success(`${res.payload.data.msg}`, {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+          });
+
+          localStorage.setItem("userInfo2", JSON.stringify(res.payload.data));
+        }
+        return res;
+      })
+      .catch((err) => {
+        console.log(err);
+        return err.response;
+      });
     setIsEditing(false);
     setNameEditing(false);
     // alert("Changes saved successfully");
@@ -160,6 +192,7 @@ const Profile = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

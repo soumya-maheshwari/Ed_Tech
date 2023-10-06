@@ -5,6 +5,7 @@ import thunk from "redux-thunk";
 
 import authReducer from "./authSlice";
 import contactReducer from "./contactSlice";
+import profileReducer from "./profileSlice";
 
 const persistConfig = {
   key: "root",
@@ -13,11 +14,13 @@ const persistConfig = {
 
 const persistedAuthReducer = persistReducer(persistConfig, authReducer);
 const persistedContactReducer = persistReducer(persistConfig, contactReducer);
+const persistedProfileReducer = persistReducer(persistConfig, profileReducer);
 
 const store = configureStore({
   reducer: {
     auth: persistedAuthReducer,
     contact: persistedContactReducer,
+    profile: persistedProfileReducer,
   },
 
   middleware: [thunk],

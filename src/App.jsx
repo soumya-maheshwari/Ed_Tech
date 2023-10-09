@@ -19,6 +19,9 @@ import Health from "./components/Section/HealthAndFitness";
 import AllTestimonials from "./components/AllTestimonials";
 import Icon from "./components/Icon";
 import Profile from "./components/Profile";
+import AdminProfile from "./components/AdminProfile";
+import Enrolled from "./components/Enrolled";
+import ContactInfo from "./components/ContactInfo";
 // import Signin2 from './components/Signin2'
 // import Signup2 from './components/Signup2'
 
@@ -60,7 +63,9 @@ const App = () => {
         <Route path="/computer" element={<Computer />} />
         <Route path="/arts" element={<Arts />} />
         <Route path="/profile" element={<Profile />} />
-
+        <Route path="/adminProfile" element={<AdminProfile />} />
+        <Route path="/enrolled" element={<Enrolled />} />
+        <Route path="/contactInfo" element={<ContactInfo />} />
         <Route path="/language" element={<Language />} />
         <Route path="/social" element={<Social />} />
         <Route path="/health" element={<Health />} />

@@ -46,7 +46,7 @@ export const viewProfileThunk = createAsyncThunk(
     };
     console.log(config);
     console.log(data);
-    return await Api.get(`profile/edit`, config)
+    return await Api.get(`profile/view/${data}`, config)
       .then((res) => {
         console.log(data);
         console.log(res);

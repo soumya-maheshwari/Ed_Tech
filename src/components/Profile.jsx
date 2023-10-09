@@ -1,21 +1,19 @@
 import React, { useState } from "react";
 import { FaBook } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import { editProfileThunk } from "../redux/profileSlice";
+import { editProfileThunk, viewProfileThunk } from "../redux/profileSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "../components/styles.css";
+import { useEffect } from "react";
 
 const Profile = () => {
   const userData = JSON.parse(localStorage.getItem("userInfo"));
   const dispatch = useDispatch();
-  const [uploadImg, setUploadImg] = useState(null);
-  const [selectedImgURL, setSelectedImgURL] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [nameEditing, setNameEditing] = useState(false);
-  const [name, setName] = useState(userData.user.name);
+  const [name, setName] = useState("");
   const [email, setEmail] = useState(userData.user.email);
-  const [phone, setPhone] = useState(userData.user.phone);
-  const [address, setAddress] = useState("123 prayagraj Main St");
+  const [phone, setPhone] = useState("");
   const [enrolledCourses, setEnrolledCourses] = useState([
     { courseName: "Course A", courseCode: "ABC123" },
     { courseName: "Course B", courseCode: "DEF456" },
@@ -27,19 +25,24 @@ const Profile = () => {
     setNameEditing(true);
   };
 
-  const userDataa = {
-    name,
-    email,
-    phone,
-    address,
-  };
-
   const data = {
     name,
-    email,
     phone,
   };
 
+  useEffect(() => {
+    dispatch(viewProfileThunk(email))
+      .then((res) => {
+        console.log(res);
+        setPhone(res.payload.data.profile.phone);
+        setName(res.payload.data.profile.name);
+        return res;
+      })
+      .catch((err) => {
+        console.log(err);
+        return err.response;
+      });
+  }, [email]);
   console.log(data);
   const handleSaveClick = (e) => {
     e.preventDefault();
@@ -68,18 +71,9 @@ const Profile = () => {
     setNameEditing(false);
   };
 
-  const handleUploadClick = () => {
-    // console.log("Uploading profile picture...");
-  };
-  const handleUploadImage = (e) => {
-    const selectedFile = e.target.files[0];
-    setUploadImg(selectedFile);
-    setSelectedImgURL(URL.createObjectURL(selectedFile)); // Create a URL for selected image
-  };
-
   return (
     <div className="flex flex-col items-center">
-      <h1 className="text-4xl text-center font-extrabold mb-8">Your Profile</h1>
+      <h1 className="text-4xl text-center font-extrabold mb-0">Your Profile</h1>
       <div className="flex">
         <div className="w-1/2 p-4 hidden lg:block">
           <img
@@ -88,56 +82,8 @@ const Profile = () => {
             className="w-full h-auto rounded-full border-2 border-white"
           />
         </div>
-        <div className="w-full lg:w-1/2 max-w-xl mx-auto bg-blue rounded text-center mb-8 p-4">
-          <div className="relative inline-block">
-            <div className="profile-photo relative mb-4">
-              {selectedImgURL ? (
-                <>
-                  <img
-                    src={selectedImgURL}
-                    alt="Selected Image"
-                    className="rounded-full w-32 h-32 border-2 border-white"
-                  />
-                </>
-              ) : (
-                <>
-                  <img
-                    src="https://img.freepik.com/premium-vector/young-smiling-man-avatar-man-with-brown-beard-mustache-hair-wearing-yellow-sweater-sweatshirt-3d-vector-people-character-illustration-cartoon-minimal-style_365941-860.jpg"
-                    alt="Profile Photo"
-                    className="rounded-full w-32 h-32 border-2 border-white"
-                  />
-                </>
-              )}
-              <input
-                type="file"
-                id="upload-img"
-                accept="image/png, image/jpg, image/jpeg"
-                // hidden
-                onChange={handleUploadImage}
-              />
-              {/* <button
-                onClick={handleUploadClick}
-                className="absolute bottom-0 right-0 bg-blue-500 text-white p-1 rounded-full"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                  ></path>
-                </svg>
-              </button> */}
-            </div>
-          </div>
-
-          <div className="text-left ml-4">
+        <div className="w-full lg:w-1/2 max-w-xl mx-auto bg-blue rounded text-center mb-8 p-4 mt-8">
+          <div className="text-left ml-4 mt-20">
             <h2 className="text-xl font-bold mb-2">
               Name:
               {nameEditing ? (
@@ -148,7 +94,7 @@ const Profile = () => {
                   className="border rounded p-2"
                 />
               ) : (
-                <span>{name}</span>
+                <span> {name}</span>
               )}
             </h2>
             <div className="input-group mb-2">
@@ -156,7 +102,8 @@ const Profile = () => {
               <input
                 type="text"
                 value={email}
-                readOnly={!isEditing}
+                isEditing="false"
+                // readOnly={!isEditing}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full border rounded p-2"
               />
@@ -168,16 +115,6 @@ const Profile = () => {
                 value={phone}
                 readOnly={!isEditing}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full border rounded p-2"
-              />
-            </div>
-            <div className="input-group mb-4">
-              <label>Address:</label>
-              <input
-                type="text"
-                value={address}
-                readOnly={!isEditing}
-                onChange={(e) => setAddress(e.target.value)}
                 className="w-full border rounded p-2"
               />
             </div>

@@ -141,9 +141,8 @@ const Signin = () => {
                   >
                     Sign In
                   </div>
-                  <div className="p-2">Forget Password!!</div>
+                  <div className="p-2 text-primary hover:underline"><NavLink to="/forget">Forgot Password</NavLink></div>
                 </div>
-                <br />
               </div>
             </form>
             <div className="text-center">

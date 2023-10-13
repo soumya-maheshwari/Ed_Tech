@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaBook } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { editProfileThunk, viewProfileThunk } from "../redux/profileSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "../components/styles.css";
-import { useEffect } from "react";
+import NavBar from "./NavBar/NavBar";
 
 const Profile = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
   const userData = JSON.parse(localStorage.getItem("userInfo"));
   const dispatch = useDispatch();
   const [isEditing, setIsEditing] = useState(false);
@@ -72,8 +75,18 @@ const Profile = () => {
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <h1 className="text-4xl text-center font-extrabold mb-0">Your Profile</h1>
+    <>
+      <NavBar />
+      <div className="hero2">
+        <h1
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          className="text-4xl text-center m-2 p-2 mt-8 font-bold text-white z-10"
+        >
+          Your Profile
+        </h1>
+      </div>
+      <div className="flex flex-col items-center text-black">
       <div className="flex">
         <div className="w-1/2 p-4 hidden lg:block">
           <img
@@ -97,7 +110,7 @@ const Profile = () => {
                 <span> {name}</span>
               )}
             </h2>
-            <div className="input-group mb-2">
+            <div className="input-group mb-2 items-center">
               <label>Email:</label>
               <input
                 type="text"
@@ -105,17 +118,17 @@ const Profile = () => {
                 isEditing="false"
                 // readOnly={!isEditing}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full border rounded p-2"
+                className="w-full border rounded p-2 bg-white max-w-fit"
               />
             </div>
-            <div className="input-group mb-2">
+            <div className="input-group mb-2 items-center">
               <label>Phone Number:</label>
               <input
                 type="text"
                 value={phone}
                 readOnly={!isEditing}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full border rounded p-2"
+                className="w-full border rounded p-2 bg-white max-w-fit"
               />
             </div>
           </div>
@@ -157,6 +170,7 @@ const Profile = () => {
       </div>
       <ToastContainer />
     </div>
+    </>
   );
 };
 

@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import NavBar from "./NavBar/NavBar";
 
 const AdminProfile = () => {
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
   const [isEditing, setIsEditing] = useState(false);
   const [nameEditing, setNameEditing] = useState(false);
   const [name, setName] = useState("Anuj Mishra");
@@ -20,10 +24,18 @@ const AdminProfile = () => {
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <h1 className="text-4xl text-center font-extrabold mb-8">
-        Admin Profile
-      </h1>
+    <>
+     <NavBar/>
+     <div className="hero2">
+        <h1
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          className="text-4xl text-center m-2 p-2 mt-8 font-bold text-white z-10"
+        >
+          Admin Profile
+        </h1>
+      </div>
+      <div className="flex flex-col items-center text-black">
       <div className="flex">
         <div className="w-1/2 p-4 hidden lg:block">
           <img
@@ -34,37 +46,37 @@ const AdminProfile = () => {
         </div>
         <div className="w-full lg:w-1/2 max-w-xl mx-auto bg-blue rounded text-center mb-8 p-4">
           <div className="text-left ml-4 mt-10">
-            <h2 className="text-xl font-bold mb-2">
+            <h2 className="text-xl font-bold mb-2 ">
               Name:
               {nameEditing ? (
                 <input
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="border rounded p-2"
+                  className="border rounded p-2 "
                 />
               ) : (
                 <span>{name}</span>
               )}
             </h2>
-            <div className="input-group mb-2">
+            <div className="input-group mb-2 items-center">
               <label>Email:</label>
               <input
                 type="text"
                 value={email}
                 readOnly={!isEditing}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full border rounded p-2"
+                className="w-full border rounded p-2 bg-white"
               />
             </div>
-            <div className="input-group mb-2">
-              <label>Phone Number:</label>
+            <div className="input-group mb-2 items-center">
+              <label >Phone Number:</label>
               <input
                 type="text"
                 value={phone}
                 readOnly={!isEditing}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full border rounded p-2"
+                className="w-full border rounded p-2 bg-white"
               />
             </div>
           </div>
@@ -80,7 +92,7 @@ const AdminProfile = () => {
             ) : (
               <button
                 onClick={handleEditClick}
-                className="btn bg-blue-500 p-2 rounded-lg text-white"
+                className="btn bg-blue-500 p-2 rounded-lg text-white border-none"
               >
                 Edit Profile
               </button>
@@ -119,6 +131,7 @@ const AdminProfile = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

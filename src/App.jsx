@@ -22,6 +22,8 @@ import Profile from "./components/Profile";
 import AdminProfile from "./components/AdminProfile";
 import Enrolled from "./components/Enrolled";
 import ContactInfo from "./components/ContactInfo";
+import ForgotPassword from "./components/FogotPassword";
+import ResetPassword from "./components/ResetPassword";
 // import Signin2 from './components/Signin2'
 // import Signup2 from './components/Signup2'
 
@@ -70,6 +72,8 @@ const App = () => {
         <Route path="/social" element={<Social />} />
         <Route path="/health" element={<Health />} />
         <Route path="/alltestimonials" element={<AllTestimonials />} />
+        <Route path="/forget" element={<ForgotPassword/>}/>
+          <Route path="/reset" element={<ResetPassword/>} />
         <Route
           path="/about"
           element={
